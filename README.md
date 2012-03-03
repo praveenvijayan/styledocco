@@ -45,16 +45,9 @@ Usage
 Examples
 --------
 
-    /* <button class="btn primary">Primary</button>  
-        Provides extra visual weight and identifies the primary action in a set of buttons */
-    .btn.primary {
-        background: blue;
-        color: white;
-    }
+This page was generated from the StyleDocco readme file, and the [docs](docs.html) file is the the default StyleDocco CSS file.
 
-Would output an HTML document with one column displaying the rendered button followed by the description, and another column with the code. The code will also be included in a `style` element of the document.
-
-See the `examples` folder for more in-depth examples.
+An additional example was generated from a modified file from the [Twitter Bootstrap](examples/bootstrap/docs/buttons.html) project.
 
 
 Acknowledgements
