@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><title>StyleDocco</title><meta charset="utf-8"><link rel="stylesheet" href="./docs.css"></head><body id="styledocco"><div class="styledocco-container"><div class="styledocco-sidebar"><a href="./index.html" class="styledocco-brand">StyleDocco</a><ul class="styledocco-nav"><li><a href="./resources/docs.html">docs
+</a></li></ul></div><div class="styledocco-content"><div class="styledocco-docs"><pre><code> _______ __         __        _____
+|     __|  |_.--.--|  |-----.|     \-----.----.----.-----.
+|__     |   _|  |  |  |  -__||  --  | _  |  __|  __|  _  |
+|_______|____|___  |__|_____||_____/_____|____|____|_____|
+             |_____|</code></pre>
+<h2>About</h2>
+<p>StyleDocco takes your stylesheets and generates style guide documents with the processed stylesheets applied to the documents.
+
+</p>
+<p><code>styledocco --name &#39;My Site&#39; main.css</code> will generate <code>docs/main.html</code> with all the comments from the file (passed through GitHub flavored Markdown) in one column, and all the code in another column.
+
+</p>
+<p>The CSS in <code>main.css</code> will be applied to the page. This means you can add sample HTML content in the comments of your CSS file, and have it rendered in the browser using that same CSS.
+
+</p>
+<p>If your project includes a <code>README</code> file, it will be used as the base for an <code>index.html</code>.
+
+</p>
+<p>StyleDocco will add <code>docs.css</code> with some default styles to your documentation, but you might want to modify it to make it fit with your project.
+
+</p>
+<p>StyleDocco will automatically compile any SASS, SCSS, Less or Stylus code before it is applied to the page. Hidden files and SASS partials will be ignored.
+
+
+</p>
+<h2>Install</h2>
+<p>StyleDocco requires <a href="http://nodejs.org">Node.js</a>.
+
+</p>
+<p><code>npm install -g styledocco</code>
+
+
+</p>
+<h2>Usage</h2>
+<p><code>styledocco [options] [INPUT]</code>
+
+</p>
+<p><strong>Options</strong>
+
+</p>
+<ul>
+<li><code>--name</code>, <code>-n</code> Name of the project <em>(required)</em></li>
+<li><code>--out</code>, <code>-o</code>  Output directory <em>(default: &quot;docs&quot;)</em></li>
+<li><code>--tmpl</code>       Directory for custom <code>index.jade</code> and <code>docs.jade</code> templates <em>(optional)</em></li>
+<li><code>--overwrite</code>  Overwrite existing files (<code>docs.css</code>) in target directory.</li>
+</ul>
+<h2>Examples</h2>
+<p>This page was generated from the StyleDocco readme file, and the <a href="docs.html">docs</a> file is the the default StyleDocco CSS file.
+
+</p>
+<p>An additional example was generated from a modified file from the <a href="examples/bootstrap/docs/buttons.html">Twitter Bootstrap</a> project.
+
+
+</p>
+<h2>Acknowledgements</h2>
+<p>Thanks to:
+
+</p>
+<ul>
+<li><a href="https://github.com/jashkenas/docco">jashkenas</a></li>
+<li><a href="https://github.com/mbrevoort/docco-husky">mbrevoort</a></li>
+</ul>
+</div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Sat Mar 03 2012 17:31:49 GMT+0100 (CET). -->
