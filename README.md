@@ -50,7 +50,7 @@ Examples
 
 This page was generated from the StyleDocco readme file, and the [docs](docs.html) file is the the default StyleDocco CSS file.
 
-An additional example was generated from a modified file from the [Twitter Bootstrap](examples/bootstrap/docs/buttons.html) project.
+An additional example was generated from a modified file from the [Twitter Bootstrap](examples/bootstrap/docs/index.html) project.
 
 
 Acknowledgements
