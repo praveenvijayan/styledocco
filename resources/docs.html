@@ -15,9 +15,6 @@ body {
     background-image:    -moz-linear-gradient(left, transparent 56%, #eee 56%),
                          -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
                          -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-    background-image:     -ms-linear-gradient(left, transparent 56%, #eee 56%),
-                          -ms-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
-                          -ms-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
     background-image:      -o-linear-gradient(left, transparent 56%, #eee 56%),
                            -o-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
                            -o-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
@@ -64,8 +61,7 @@ Stays fixed to the left, with its own scrollbar. */
     overflow-y: hidden;
     overflow-x: auto;
     background: #333;
-    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .5);
-    box-shadow:      0 0 4px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .5);
     font: 13px/1.6 sans-serif;
 }
 
@@ -99,8 +95,7 @@ Stays fixed to the left, with its own scrollbar. */
     padding: .3em 5%;
     margin: 1.5em 0 .5em;
     text-shadow: 0 0 1px rgba(255, 255, 255, .5);
-    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
-    box-shadow:      1px 1px 2px rgba(0, 0, 0, .5);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
 }
 .styledocco-nav a {
     display: block;
@@ -123,6 +118,7 @@ Stays fixed to the left, with its own scrollbar. */
 .styledocco-code,
 .styledocco-docs {
     width: 50%;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 2em;
     float: left;
@@ -222,12 +218,13 @@ body {
                       -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
     background-image:    -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
                          -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-    background-image:     -ms-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
-                          -ms-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
     background-image:      -o-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
                            -o-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
     background-size: 20px 20px, 20px 20px;
     background-position: 0 0, 10px 10px;
+}
+#styledocco-fork-me {
+    display: none;
 }
 
 }
@@ -246,9 +243,6 @@ body {
     background-image:    -moz-linear-gradient(left, transparent 56%, #eee 56%),
                          -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
                          -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-    background-image:     -ms-linear-gradient(left, transparent 56%, #eee 56%),
-                          -ms-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
-                          -ms-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
     background-image:      -o-linear-gradient(left, transparent 56%, #eee 56%),
                            -o-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
                            -o-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
@@ -289,8 +283,7 @@ pre code {
     overflow-y: hidden;
     overflow-x: auto;
     background: #333;
-    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .5);
-    box-shadow:      0 0 4px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .5);
     font: 13px/1.6 sans-serif;
 }</code></pre></div></div><div class="styledocco-row"><div class="styledocco-docs"><p><span class="styledocco-brand">Project name</span></p>
 </div><div class="styledocco-code"><pre><code>.styledocco-brand {
@@ -321,8 +314,7 @@ pre code {
     padding: .3em 5%;
     margin: 1.5em 0 .5em;
     text-shadow: 0 0 1px rgba(255, 255, 255, .5);
-    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
-    box-shadow:      1px 1px 2px rgba(0, 0, 0, .5);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
 }
 .styledocco-nav a {
     display: block;
@@ -344,6 +336,7 @@ pre code {
 .styledocco-code,
 .styledocco-docs {
     width: 50%;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0 2em;
     float: left;
@@ -414,7 +407,8 @@ pre code {
 }
 .styledocco-nav:after {
     clear: both;
-}</code></pre></div></div><div class="styledocco-row"><div class="styledocco-docs"><p><strong>Hide code view</strong>.<br>Maybe we can find a decent way to display it on demand later.</p>
+}</code></pre></div></div><div class="styledocco-row"><div class="styledocco-docs"><p><strong>Hide code view</strong>.
+Maybe we can find a decent way to display it on demand later.</p>
 </div><div class="styledocco-code"><pre><code>.styledocco-code {
     display: none;
 }
@@ -430,12 +424,13 @@ body {</code></pre></div></div><div class="styledocco-row"><div class="styledocc
                       -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
     background-image:    -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
                          -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
-    background-image:     -ms-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
-                          -ms-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
     background-image:      -o-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
                            -o-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
     background-size: 20px 20px, 20px 20px;
     background-position: 0 0, 10px 10px;
 }
+#styledocco-fork-me {
+    display: none;
+}
 
-}</code></pre></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Sun Mar 04 2012 12:06:19 GMT+0100 (CET). -->
+}</code></pre></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Sun Mar 04 2012 18:49:12 GMT+0100 (CET). -->
