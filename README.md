@@ -6,7 +6,7 @@
 
 
 About
------
+=====
 
 StyleDocco takes your stylesheets and generates style guide documents with the processed stylesheets applied to the documents.
 
@@ -22,7 +22,7 @@ StyleDocco will automatically compile any SASS, SCSS, Less or Stylus code before
 
 
 Install
--------
+=======
 
 StyleDocco requires [Node.js](http://nodejs.org).
 
@@ -30,11 +30,12 @@ StyleDocco requires [Node.js](http://nodejs.org).
 
 
 Usage
------
+=====
 
 `styledocco [options] [INPUT]`
 
-**Options**
+Options
+-------
 
  * `--name`, `-n` Name of the project *(required)*
  * `--out`, `-o`  Output directory *(default: "docs")*
@@ -43,7 +44,7 @@ Usage
 
 
 Examples
---------
+========
 
 This page was generated from the StyleDocco readme file, and the [docs](docs.html) file is the the default StyleDocco CSS file.
 
@@ -51,7 +52,7 @@ An additional example was generated from a modified file from the [Twitter Boots
 
 
 Acknowledgements
-----------------
+================
 
 Thanks to:
 
