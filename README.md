@@ -41,14 +41,23 @@ or clone the [GitHub repository](https://github.com/jacobrask/styledocco).
 
 ## Examples
 
-This page was generated from the StyleDocco readme file, and the [docs](resources/docs.html) file is the the default StyleDocco CSS file.
+    /* <button class="btn primary">Primary</button>
+        Provides extra visual weight and identifies the primary action in a set of buttons. */
+    .btn.primary {
+        background: blue;
+        color: white;
+    }
+
+Would output an HTML document with one column displaying the rendered button followed by the description, and another column with the code. The code will also be included in a `style` element of the document.
+
+This page is also an example itself, as it was generated from the StyleDocco readme file. The [docs](resources/docs.html) file is the documentation of the default StyleDocco CSS file.
 
 An additional example was generated from a modified file from the [Twitter Bootstrap](examples/bootstrap/docs/index.html) project.
 
 
 ## Acknowledgements
 
-Thanks to:
+thanks to:
 
  * [jashkenas](https://github.com/jashkenas/docco)
  * [mbrevoort](https://github.com/mbrevoort/docco-husky)
