@@ -57,7 +57,7 @@ An additional example was generated from a modified file from the [Twitter Boots
 
 ## Acknowledgements
 
-thanks to:
+Thanks to:
 
  * [jashkenas](https://github.com/jashkenas/docco)
  * [mbrevoort](https://github.com/mbrevoort/docco-husky)
