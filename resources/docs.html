@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title> | StyleDocco</title><meta charset="utf-8"><link rel="stylesheet" href="../docs.css"><style>/* StyleDocco default styles
+<!DOCTYPE html><html><head><title>resources/docs.css | StyleDocco</title><meta charset="utf-8"><link rel="stylesheet" href="../docs.css"><style>/* StyleDocco default styles
 ===============================================================================
 This is the default stylesheet for StyleDocco. It also serves as an example
 of the documentation syntax. */
@@ -20,59 +20,58 @@ displaying code blocks. It was converted to WOFF with
     font-style: normal;
 }
 
-/* Because we don't want to interfere with the example content, our selectors
-need to be a bit verbose. The code examples here also need to be wrapped in
-`.styledocco-docs` containers. */
+/* Use `:not()` to avoid interfering with the code examples. */
+
 .styledocco-sidebar,
-.styledocco-main > h1, .styledocco-main > p,
-.styledocco-docs > h1, .styledocco-docs > h2, .styledocco-docs > h3,
-.styledocco-docs > h4, .styledocco-docs > h5, .styledocco-docs > h6,
-.styledocco-docs > p, .styledocco-docs > ul, .styledocco-docs > ol {
+.styledocco-docs > :not(.styledocco-example) {
     color: #333;
     font-family: sans-serif;
     margin: 15px 20px;
 }
-.styledocco-main > p,
 .styledocco-docs > p, .styledocco-docs > ul, .styledocco-docs > ol {
     font-size: 12px;
+    line-height: 1.6;
 }
 
 /*    <a href="#">Unstyled link example</a>
 Links inside example boxes don't get any of StyleDocco's style. */
-.styledocco-docs > p a {
+.styledocco-docs > :not(.styledocco-example) a {
     color: #15a;
     font: 13px/1.6 sans-serif;
     text-decoration: none;
 }
-.styledocco-docs > p a:hover {
+.styledocco-docs > :not(.styledocco-example) a:hover {
+    color: #15a;
     color: #038;
 }
-/* ```
-<div class="styledocco-docs">
-  <p>A <a href="#">styled link</a> and some <code>inline code</code>.</p>
-</div>
-```
+/*
+    <div class="styledocco-docs">
+      <p>A <a href="#">styled link</a> and some <code>inline code</code>.</p>
+    </div>
+
 Manually adding our documentation container changes that. You won't need that
 in your stylesheets, of course. */
-.styledocco-docs > p > code {
+.styledocco-docs > :not(.styledocco-example):not(pre) var,
+.styledocco-docs > :not(.styledocco-example):not(pre) code {
     padding: .1em 3px;
     background: rgba(0, 0, 0, .05);
     border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 3px;
     font-size: .9em;
+    font-style: normal;
     font-family: monospace;
 }
 /* ```
-<div class="styledocco-docs"><pre><code>The font in &lt;pre&gt; code blocks
-is small but legible.
-</code></pre></div>
+<div class="styledocco-docs">
+<pre><code>The font in &lt;pre&gt; code blocks is small but legible.</code></pre>
+</div>
 ```
-ProggyTiny is a realy nice font, but our inline code snippets get the default
+ProggyTiny is a really nice font, but our inline code snippets get the default
 monospace font as ProggyTiny doesn't look good at bigger sizes. */
 .styledocco-docs > pre {
     white-space: pre-wrap;
     word-wrap: break-word;
-    margin: 0;
+    margin: 0 !important;
     padding: 10px 20px;
     background: #f8f8f8;
     color: #444;
@@ -101,33 +100,22 @@ code snippets. */
 /* ## Site Layout ##
 A centered container with documentation and code side by side, and a menu (not displayed here).
 
-```
-<div class="styledocco-container">
-  <div class="styledocco-section">
-    <div class="styledocco-docs"><p>Documentation</p></div>
-    <div class="styledocco-code"><pre>Code</pre></div>
-  </div>
-</div>
-```
+    <div class="styledocco-container">
+      <div class="styledocco-section">
+        <div class="styledocco-docs"><p>Documentation</p></div>
+        <div class="styledocco-code"><pre>Code</pre></div>
+      </div>
+    </div>
 */
  /* Makes sure the actual content is centered by putting a right-padding with
 the same width as the sidebar. This is a hidden comment btw. */
 .styledocco-container {
-    width: 75%;
-    max-width: 1500px;
+    width: 95%;
+    max-width: 1400px;
     margin: 0 auto;
 }
-.styledocco-sidebar {
-    position: absolute;
-    width: 10%;
-    word-wrap: break-word;
-    font-size: 13px;
-}
-.styledocco-sidebar a {
-    text-decoration: none;
-}
 .styledocco-main {
-    width: 85%;
+    width: 83%;
     float: right;
 }
 .styledocco-section {
@@ -137,7 +125,7 @@ the same width as the sidebar. This is a hidden comment btw. */
 .styledocco-docs {
     position: relative;
     z-index: 2;
-    width: 55%;
+    width: 60%;
     min-height: 100%;
     margin: 20px 0 40px;
     background: #fff;
@@ -150,7 +138,7 @@ the same width as the sidebar. This is a hidden comment btw. */
     z-index: 1;
     top: 5px; bottom: 5px;
     right: 0;
-    width: 45%;
+    width: 40%;
     overflow: auto;
     padding: 10px;
     box-sizing: border-box;
@@ -182,40 +170,70 @@ of their color. */
     padding: 15px;
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAAZQTFRF+vr6////+o8bnQAAABBJREFUCB1jYPjPgBXhEAYAfr8P8bm+jEoAAAAASUVORK5CYII=);
     border-top: 1px solid #eee;
+    overflow: auto;
+}
+pre + .styledocco-example {
+    border-top: 0;
 }
 .styledocco-example:before, .styledocco-example:after { display: table; content: ""; }
 .styledocco-example:after { clear: both; }
 
 
 /* ## Menu ##
-Sidebar menu. */
+Sidebar menu.
+
+    <div class="styledocco-sidebar" style="position:static">
+      <a href="#" class="styledocco-brand">Name</a>
+      <ul class="styledocco-nav">
+        <li><a href="#">Item</a>
+        <li><a href="#">Item</a>
+      </ul>
+    </div>
+ */
+.styledocco-sidebar {
+    position: absolute;
+    width: 11%;
+    word-wrap: break-word;
+    font-size: 13px;
+}
+.styledocco-sidebar a {
+    text-decoration: none;
+}
 .styledocco-brand {
     display: block;
-    color: #000;
+    color: #333;
     font-size: 16px;
     line-height: 2;
+    text-align: center;
     font-weight: bold;
+    border-radius: 3px 3px 0 0;
+}
+.styledocco-brand:hover {
+    color: #000;
+    text-decoration: none;
 }
 .styledocco-nav {
     margin: 0;
-    padding: 10px 0;
+    padding: 0;
+    border-top: 1px solid #ddd;
 }
 .styledocco-nav li {
     margin: 0;
     padding: 0;
     list-style: none;
+    border-bottom: 1px solid #ddd;
 }
 .styledocco-nav-heading {
     display: block;
     font-size: 13px;
     padding: .3em 5%;
-    margin: 1em 0 .1em;
+    margin: 1em 0 0;
 }
 .styledocco-nav a {
     display: block;
     padding: .2em 10%;
-    color: #333;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, .15);
+    color: #555;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
 }
 .styledocco-nav a:active,
 .styledocco-nav a:focus,
@@ -223,6 +241,7 @@ Sidebar menu. */
     color: #000;
     background: #eee;
     text-shadow: none;
+    text-decoration: none;
 }
 
 /* ## Code highlighting
@@ -264,6 +283,7 @@ A slightly modified (muted, no bold) variant of the GitHub code color scheme. */
 .styledocco-code .attribute,
 .styledocco-docs > pre .attribute,
 .styledocco-code .variable,
+.styledocco-docs > p > var,
 .styledocco-docs > pre .variable {
     color: #188;
 }
@@ -276,7 +296,7 @@ A slightly modified (muted, no bold) variant of the GitHub code color scheme. */
     color: #990073;
 }
 </style></head><body><div class="styledocco-container"><div class="styledocco-sidebar"><a href="../index.html" class="styledocco-brand">StyleDocco</a><ul class="styledocco-nav"><li><a href="../resources/docs.html">docs
-</a></li></ul></div><div class="styledocco-main"><h1></h1><div class="styledocco-section"><div class="styledocco-docs"><h1> StyleDocco default styles</h1>
+</a></li></ul></div><div class="styledocco-main"><div class="styledocco-section"><div class="styledocco-docs"><h1> StyleDocco default styles</h1>
 <p>This is the default stylesheet for StyleDocco. It also serves as an example
 of the documentation syntax. 
 </p></div></div><div class="styledocco-section"><div class="styledocco-docs"><h2>General styles</h2>
@@ -286,9 +306,7 @@ of the documentation syntax.
 displaying code blocks. It was converted to WOFF with
 <a href="http://www.fontsquirrel.com">Font Squirrel</a> and is embedded as a data uri. 
 </p>
-<p> Because we don&#39;t want to interfere with the example content, our selectors
-need to be a bit verbose. The code examples here also need to be wrapped in
-<code>.styledocco-docs</code> containers. 
+<p> Use <code>:not()</code> to avoid interfering with the code examples. 
 </p>
 <div class="styledocco-example"><a href="#">Unstyled link example</a></div><pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>></span>Unstyled link example<span class="tag">&lt;/<span class="title">a</span>></span></code></pre>
 <p>Links inside example boxes don&#39;t get any of StyleDocco&#39;s style. 
@@ -301,12 +319,12 @@ need to be a bit verbose. The code examples here also need to be wrapped in
 <p>Manually adding our documentation container changes that. You won&#39;t need that
 in your stylesheets, of course. 
 </p>
-<div class="styledocco-example"><div class="styledocco-docs"><pre><code>The font in &lt;pre&gt; code blocks
-is small but legible.
-</code></pre></div></div><pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"styledocco-docs"</span>></span><span class="tag">&lt;<span class="title">pre</span>></span><span class="tag">&lt;<span class="title">code</span>></span>The font in &amp;lt;pre&amp;gt; code blocks
-is small but legible.
-<span class="tag">&lt;/<span class="title">code</span>></span><span class="tag">&lt;/<span class="title">pre</span>></span><span class="tag">&lt;/<span class="title">div</span>></span></code></pre>
-<p>ProggyTiny is a realy nice font, but our inline code snippets get the default
+<div class="styledocco-example"><div class="styledocco-docs">
+<pre><code>The font in &lt;pre&gt; code blocks is small but legible.</code></pre>
+</div></div><pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"styledocco-docs"</span>></span>
+<span class="tag">&lt;<span class="title">pre</span>></span><span class="tag">&lt;<span class="title">code</span>></span>The font in &amp;lt;pre&amp;gt; code blocks is small but legible.<span class="tag">&lt;/<span class="title">code</span>></span><span class="tag">&lt;/<span class="title">pre</span>></span>
+<span class="tag">&lt;/<span class="title">div</span>></span></code></pre>
+<p>ProggyTiny is a really nice font, but our inline code snippets get the default
 monospace font as ProggyTiny doesn&#39;t look good at bigger sizes. 
 </p>
 <p> We add some selection colors to better highlight when you&#39;re copy/pasting
@@ -323,40 +341,41 @@ code snippets.
     <span class="rule"><span class="attribute">font-style</span>:<span class="value"> normal</span>;</span>
 <span class="rule">}</span></span>
 
+
 <span class="class">.styledocco-sidebar</span>,
-<span class="class">.styledocco-main</span> > <span class="tag">h1</span>, <span class="class">.styledocco-main</span> > <span class="tag">p</span>,
-<span class="class">.styledocco-docs</span> > <span class="tag">h1</span>, <span class="class">.styledocco-docs</span> > <span class="tag">h2</span>, <span class="class">.styledocco-docs</span> > <span class="tag">h3</span>,
-<span class="class">.styledocco-docs</span> > <span class="tag">h4</span>, <span class="class">.styledocco-docs</span> > <span class="tag">h5</span>, <span class="class">.styledocco-docs</span> > <span class="tag">h6</span>,
-<span class="class">.styledocco-docs</span> > <span class="tag">p</span>, <span class="class">.styledocco-docs</span> > <span class="tag">ul</span>, <span class="class">.styledocco-docs</span> > <span class="tag">ol</span> <span class="rules">{
+<span class="class">.styledocco-docs</span> > <span class="pseudo">:not(</span><span class="class">.styledocco-example</span>) <span class="rules">{
     <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#333</span></span>;</span>
     <span class="rule"><span class="attribute">font-family</span>:<span class="value"> sans-serif</span>;</span>
     <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">15</span>px <span class="number">20</span>px</span>;</span>
 <span class="rule">}</span></span>
-<span class="class">.styledocco-main</span> > <span class="tag">p</span>,
 <span class="class">.styledocco-docs</span> > <span class="tag">p</span>, <span class="class">.styledocco-docs</span> > <span class="tag">ul</span>, <span class="class">.styledocco-docs</span> > <span class="tag">ol</span> <span class="rules">{
     <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">12</span>px</span>;</span>
+    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">1.6</span></span>;</span>
 <span class="rule">}</span></span>
 
-<span class="class">.styledocco-docs</span> > <span class="tag">p</span> <span class="tag">a</span> <span class="rules">{
+<span class="class">.styledocco-docs</span> > <span class="pseudo">:not(</span><span class="class">.styledocco-example</span>) <span class="tag">a</span> <span class="rules">{
     <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#15a</span></span>;</span>
     <span class="rule"><span class="attribute">font</span>:<span class="value"> <span class="number">13</span>px/<span class="number">1.6</span> sans-serif</span>;</span>
     <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span>;</span>
 <span class="rule">}</span></span>
-<span class="class">.styledocco-docs</span> > <span class="tag">p</span> <span class="tag">a</span><span class="pseudo">:hover</span> <span class="rules">{
+<span class="class">.styledocco-docs</span> > <span class="pseudo">:not(</span><span class="class">.styledocco-example</span>) <span class="tag">a</span><span class="pseudo">:hover</span> <span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#15a</span></span>;</span>
     <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#038</span></span>;</span>
 <span class="rule">}</span></span>
-<span class="class">.styledocco-docs</span> > <span class="tag">p</span> > <span class="tag">code</span> <span class="rules">{
+<span class="class">.styledocco-docs</span> > <span class="pseudo">:not(</span><span class="class">.styledocco-example</span>)<span class="pseudo">:not(pre)</span> <span class="tag">var</span>,
+<span class="class">.styledocco-docs</span> > <span class="pseudo">:not(</span><span class="class">.styledocco-example</span>)<span class="pseudo">:not(pre)</span> <span class="tag">code</span> <span class="rules">{
     <span class="rule"><span class="attribute">padding</span>:<span class="value"> .<span class="number">1</span>em <span class="number">3</span>px</span>;</span>
     <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">05</span>)</span></span>;</span>
     <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="function">rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">1</span>)</span></span>;</span>
     <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">3</span>px</span>;</span>
     <span class="rule"><span class="attribute">font-size</span>:<span class="value"> .<span class="number">9</span>em</span>;</span>
+    <span class="rule"><span class="attribute">font-style</span>:<span class="value"> normal</span>;</span>
     <span class="rule"><span class="attribute">font-family</span>:<span class="value"> monospace</span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-docs</span> > <span class="tag">pre</span> <span class="rules">{
     <span class="rule"><span class="attribute">white-space</span>:<span class="value"> pre-wrap</span>;</span>
     <span class="rule"><span class="attribute">word-wrap</span>:<span class="value"> break-word</span>;</span>
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span>;</span>
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> <span class="important">!important</span></span>;</span>
     <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px <span class="number">20</span>px</span>;</span>
     <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#f8f8f8</span></span>;</span>
     <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#444</span></span>;</span>
@@ -399,21 +418,12 @@ of their color.
 </p></div><div class="styledocco-code"><pre><code> <span class="comment">/* Makes sure the actual content is centered by putting a right-padding with
 the same width as the sidebar. This is a hidden comment btw. */</span>
 <span class="class">.styledocco-container</span> <span class="rules">{
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">75</span>%</span>;</span>
-    <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">1500</span>px</span>;</span>
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">95</span>%</span>;</span>
+    <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">1400</span>px</span>;</span>
     <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span> auto</span>;</span>
 <span class="rule">}</span></span>
-<span class="class">.styledocco-sidebar</span> <span class="rules">{
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span>;</span>
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">10</span>%</span>;</span>
-    <span class="rule"><span class="attribute">word-wrap</span>:<span class="value"> break-word</span>;</span>
-    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">13</span>px</span>;</span>
-<span class="rule">}</span></span>
-<span class="class">.styledocco-sidebar</span> <span class="tag">a</span> <span class="rules">{
-    <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span>;</span>
-<span class="rule">}</span></span>
 <span class="class">.styledocco-main</span> <span class="rules">{
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">85</span>%</span>;</span>
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">83</span>%</span>;</span>
     <span class="rule"><span class="attribute">float</span>:<span class="value"> right</span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-section</span> <span class="rules">{
@@ -423,7 +433,7 @@ the same width as the sidebar. This is a hidden comment btw. */</span>
 <span class="class">.styledocco-docs</span> <span class="rules">{
     <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span>;</span>
     <span class="rule"><span class="attribute">z-index</span>:<span class="value"> <span class="number">2</span></span>;</span>
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">55</span>%</span>;</span>
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">60</span>%</span>;</span>
     <span class="rule"><span class="attribute">min-height</span>:<span class="value"> <span class="number">100</span>%</span>;</span>
     <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">20</span>px <span class="number">0</span> <span class="number">40</span>px</span>;</span>
     <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#fff</span></span>;</span>
@@ -436,7 +446,7 @@ the same width as the sidebar. This is a hidden comment btw. */</span>
     <span class="rule"><span class="attribute">z-index</span>:<span class="value"> <span class="number">1</span></span>;</span>
     <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">5</span>px</span>;</span> <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">5</span>px</span>;</span>
     <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">0</span></span>;</span>
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">45</span>%</span>;</span>
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">40</span>%</span>;</span>
     <span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span>;</span>
     <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px</span>;</span>
     <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span>;</span>
@@ -465,37 +475,72 @@ the same width as the sidebar. This is a hidden comment btw. */</span>
     <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">15</span>px</span>;</span>
     <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAAXNSR0IArs4c6QAAAAZQTFRF+vr6////+o8bnQAAABBJREFUCB1jYPjPgBXhEAYAfr8P8bm+jEoAAAAASUVORK5CYII=)</span></span>;</span>
     <span class="rule"><span class="attribute">border-top</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#eee</span></span>;</span>
+    <span class="rule"><span class="attribute">overflow</span>:<span class="value"> auto</span>;</span>
+<span class="rule">}</span></span>
+<span class="tag">pre</span> + <span class="class">.styledocco-example</span> <span class="rules">{
+    <span class="rule"><span class="attribute">border-top</span>:<span class="value"> <span class="number">0</span></span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-example</span><span class="pseudo">:before</span>, <span class="class">.styledocco-example</span><span class="pseudo">:after</span> <span class="rules">{ <span class="rule"><span class="attribute">display</span>:<span class="value"> table</span>;</span> <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">""</span></span>;</span> <span class="rule">}</span></span>
 <span class="class">.styledocco-example</span><span class="pseudo">:after</span> <span class="rules">{ <span class="rule"><span class="attribute">clear</span>:<span class="value"> both</span>;</span> <span class="rule">}</span></span></code></pre></div></div><div class="styledocco-section"><div class="styledocco-docs"><h2>Menu</h2>
-<p>Sidebar menu. 
-</p></div><div class="styledocco-code"><pre><code><span class="class">.styledocco-brand</span> <span class="rules">{
+<p>Sidebar menu.
+
+</p>
+<div class="styledocco-example"><div class="styledocco-sidebar" style="position:static">
+  <a href="#" class="styledocco-brand">Name</a>
+  <ul class="styledocco-nav">
+    <li><a href="#">Item</a>
+    <li><a href="#">Item</a>
+  </ul>
+</div></div><pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"styledocco-sidebar"</span> <span class="attribute">style</span>=<span class="value">"position:static"</span>></span>
+  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">class</span>=<span class="value">"styledocco-brand"</span>></span>Name<span class="tag">&lt;/<span class="title">a</span>></span>
+  <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"styledocco-nav"</span>></span>
+    <span class="tag">&lt;<span class="title">li</span>></span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>></span>Item<span class="tag">&lt;/<span class="title">a</span>></span>
+    <span class="tag">&lt;<span class="title">li</span>></span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>></span>Item<span class="tag">&lt;/<span class="title">a</span>></span>
+  <span class="tag">&lt;/<span class="title">ul</span>></span>
+<span class="tag">&lt;/<span class="title">div</span>></span></code></pre></div><div class="styledocco-code"><pre><code><span class="class">.styledocco-sidebar</span> <span class="rules">{
+    <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span>;</span>
+    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">11</span>%</span>;</span>
+    <span class="rule"><span class="attribute">word-wrap</span>:<span class="value"> break-word</span>;</span>
+    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">13</span>px</span>;</span>
+<span class="rule">}</span></span>
+<span class="class">.styledocco-sidebar</span> <span class="tag">a</span> <span class="rules">{
+    <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span>;</span>
+<span class="rule">}</span></span>
+<span class="class">.styledocco-brand</span> <span class="rules">{
     <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span>;</span>
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#000</span></span>;</span>
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#333</span></span>;</span>
     <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">16</span>px</span>;</span>
     <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">2</span></span>;</span>
+    <span class="rule"><span class="attribute">text-align</span>:<span class="value"> center</span>;</span>
     <span class="rule"><span class="attribute">font-weight</span>:<span class="value"> bold</span>;</span>
+    <span class="rule"><span class="attribute">border-radius</span>:<span class="value"> <span class="number">3</span>px <span class="number">3</span>px <span class="number">0</span> <span class="number">0</span></span>;</span>
+<span class="rule">}</span></span>
+<span class="class">.styledocco-brand</span><span class="pseudo">:hover</span> <span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#000</span></span>;</span>
+    <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-nav</span> <span class="rules">{
     <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span>;</span>
-    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">10</span>px <span class="number">0</span></span>;</span>
+    <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span>;</span>
+    <span class="rule"><span class="attribute">border-top</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ddd</span></span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-nav</span> <span class="tag">li</span> <span class="rules">{
     <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span>;</span>
     <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span>;</span>
     <span class="rule"><span class="attribute">list-style</span>:<span class="value"> none</span>;</span>
+    <span class="rule"><span class="attribute">border-bottom</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#ddd</span></span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-nav-heading</span> <span class="rules">{
     <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span>;</span>
     <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">13</span>px</span>;</span>
     <span class="rule"><span class="attribute">padding</span>:<span class="value"> .<span class="number">3</span>em <span class="number">5</span>%</span>;</span>
-    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">1</span>em <span class="number">0</span> .<span class="number">1</span>em</span>;</span>
+    <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">1</span>em <span class="number">0</span> <span class="number">0</span></span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-nav</span> <span class="tag">a</span> <span class="rules">{
     <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span>;</span>
     <span class="rule"><span class="attribute">padding</span>:<span class="value"> .<span class="number">2</span>em <span class="number">10</span>%</span>;</span>
-    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#333</span></span>;</span>
-    <span class="rule"><span class="attribute">text-shadow</span>:<span class="value"> <span class="number">1</span>px <span class="number">1</span>px <span class="number">0</span> <span class="function">rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">15</span>)</span></span>;</span>
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#555</span></span>;</span>
+    <span class="rule"><span class="attribute">text-shadow</span>:<span class="value"> <span class="number">1</span>px <span class="number">1</span>px <span class="number">0</span> <span class="function">rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">1</span>)</span></span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-nav</span> <span class="tag">a</span><span class="pseudo">:active</span>,
 <span class="class">.styledocco-nav</span> <span class="tag">a</span><span class="pseudo">:focus</span>,
@@ -503,6 +548,7 @@ the same width as the sidebar. This is a hidden comment btw. */</span>
     <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#000</span></span>;</span>
     <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#eee</span></span>;</span>
     <span class="rule"><span class="attribute">text-shadow</span>:<span class="value"> none</span>;</span>
+    <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none</span>;</span>
 <span class="rule">}</span></span></code></pre></div></div><div class="styledocco-section"><div class="styledocco-docs"><h2>Code highlighting</h2>
 <p>A slightly modified (muted, no bold) variant of the GitHub code color scheme. 
 </p></div><div class="styledocco-code"><pre><code><span class="class">.styledocco-code</span> <span class="class">.comment</span>,
@@ -542,6 +588,7 @@ the same width as the sidebar. This is a hidden comment btw. */</span>
 <span class="class">.styledocco-code</span> <span class="class">.attribute</span>,
 <span class="class">.styledocco-docs</span> > <span class="tag">pre</span> <span class="class">.attribute</span>,
 <span class="class">.styledocco-code</span> <span class="class">.variable</span>,
+<span class="class">.styledocco-docs</span> > <span class="tag">p</span> > <span class="tag">var</span>,
 <span class="class">.styledocco-docs</span> > <span class="tag">pre</span> <span class="class">.variable</span> <span class="rules">{
     <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#188</span></span>;</span>
 <span class="rule">}</span></span>
@@ -552,4 +599,4 @@ the same width as the sidebar. This is a hidden comment btw. */</span>
 <span class="class">.styledocco-code</span> <span class="class">.symbol</span>,
 <span class="class">.styledocco-docs</span> > <span class="tag">pre</span> <span class="class">.symbol</span> <span class="rules">{
     <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#990073</span></span>;</span>
-<span class="rule">}</span></span></code></pre></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Mon Mar 12 2012 10:28:20 GMT+0100 (CET). -->
+<span class="rule">}</span></span></code></pre></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Mon Mar 12 2012 16:06:51 GMT+0100 (CET). -->
