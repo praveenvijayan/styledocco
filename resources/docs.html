@@ -87,6 +87,8 @@ monospace font as ProggyTiny doesn't look good at bigger sizes. */
     padding: 0;
     font-family: ProggyTinyTTRegular, monospace;
     font-size: 16px;
+    -webkit-font-smoothing: none;
+    font-smooth: never;
 }
 /* We add some selection colors to better highlight when you're copy/pasting
 code snippets. */
@@ -130,11 +132,13 @@ the same width as the sidebar. This is a hidden comment btw. */
 }
 .styledocco-section {
     position: relative;
+    min-height: 200px;
 }
 .styledocco-docs {
     position: relative;
     z-index: 2;
     width: 55%;
+    min-height: 100%;
     margin: 20px 0 40px;
     background: #fff;
     border: 1px solid #eee;
@@ -367,6 +371,8 @@ code snippets.
     <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span>;</span>
     <span class="rule"><span class="attribute">font-family</span>:<span class="value"> ProggyTinyTTRegular, monospace</span>;</span>
     <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">16</span>px</span>;</span>
+    <span class="rule"><span class="attribute">-webkit-font-smoothing</span>:<span class="value"> none</span>;</span>
+    <span class="rule"><span class="attribute">font-smooth</span>:<span class="value"> never</span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-code</span> <span class="tag">code</span><span class="pseudo">::selection</span>,
 <span class="class">.styledocco-docs</span> > <span class="tag">pre</span> <span class="tag">code</span><span class="pseudo">::selection</span> <span class="rules">{
@@ -412,11 +418,13 @@ the same width as the sidebar. This is a hidden comment btw. */</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-section</span> <span class="rules">{
     <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span>;</span>
+    <span class="rule"><span class="attribute">min-height</span>:<span class="value"> <span class="number">200</span>px</span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-docs</span> <span class="rules">{
     <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span>;</span>
     <span class="rule"><span class="attribute">z-index</span>:<span class="value"> <span class="number">2</span></span>;</span>
     <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">55</span>%</span>;</span>
+    <span class="rule"><span class="attribute">min-height</span>:<span class="value"> <span class="number">100</span>%</span>;</span>
     <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">20</span>px <span class="number">0</span> <span class="number">40</span>px</span>;</span>
     <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#fff</span></span>;</span>
     <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1</span>px solid <span class="hexcolor">#eee</span></span>;</span>
@@ -544,4 +552,4 @@ the same width as the sidebar. This is a hidden comment btw. */</span>
 <span class="class">.styledocco-code</span> <span class="class">.symbol</span>,
 <span class="class">.styledocco-docs</span> > <span class="tag">pre</span> <span class="class">.symbol</span> <span class="rules">{
     <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#990073</span></span>;</span>
-<span class="rule">}</span></span></code></pre></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Mon Mar 12 2012 01:10:08 GMT+0100 (CET). -->
+<span class="rule">}</span></span></code></pre></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Mon Mar 12 2012 10:28:20 GMT+0100 (CET). -->
