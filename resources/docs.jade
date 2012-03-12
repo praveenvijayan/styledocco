@@ -1,19 +1,36 @@
 !!! 5
 html
   head
-    title=title
+    if title == project.name
+      title #{project.name}
+    else
+      title #{title} | #{project.name}
     meta(charset='utf-8')
     link(rel='stylesheet', href="#{project.root}docs.css")
-    style !{css}
+    if css
+      style !{css}
   body
     .styledocco-container
       .styledocco-sidebar
-        include menu
-      .styledocco-content
+        a.styledocco-brand(href="#{project.root}index.html") #{project.name}
+        each links, folder in project.menu
+          unless folder == './'
+            strong.styledocco-nav-heading #{folder}
+          ul.styledocco-nav
+            each link in links
+              li
+                a(href="#{project.root}#{link.href}")
+                  #{link.name}
+      .styledocco-main
+        h1 #{title}
+        if description
+          p #{description}
         each section, i in sections
-          .styledocco-row
+          .styledocco-section
             .styledocco-docs !{section.docs}
-            .styledocco-code
-              if section.code != ''
-                pre: code !{section.code}
-include footer
+            if section.code
+              .styledocco-code
+                pre
+                  code !{section.code}
+
+<!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at #{new Date().toLocaleString()}. -->
