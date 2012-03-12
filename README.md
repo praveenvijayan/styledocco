@@ -1,11 +1,8 @@
-
 <pre><samp> _______ __         __        _____
 |     __|  |_.--.--|  |-----.|     \-----.----.----.-----.
 |__     |   _|  |  |  |  -__||  --  | _  |  __|  __|  _  |
 |_______|____|___  |__|_____||_____/_____|____|____|_____|
-             |_____|
-</samp></pre>
-
+             |_____|</samp></pre>
 
 StyleDocco generates documentation and style guide documents from your stylesheets.
 
