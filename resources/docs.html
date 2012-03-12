@@ -20,8 +20,7 @@ displaying code blocks. It was converted to WOFF with
     font-style: normal;
 }
 
-/* Use `:not()` to avoid interfering with the code examples. */
-
+/* We use `:not()` to avoid interfering with the code examples. */
 .styledocco-sidebar,
 .styledocco-docs > :not(.styledocco-example) {
     color: #333;
@@ -80,6 +79,7 @@ monospace font as ProggyTiny doesn't look good at bigger sizes. */
     line-height: 14px;
 }
 .styledocco-code pre code,
+.styledocco-docs > pre samp,
 .styledocco-docs > pre code {
     background: transparent;
     border: 0;
@@ -306,7 +306,7 @@ of the documentation syntax.
 displaying code blocks. It was converted to WOFF with
 <a href="http://www.fontsquirrel.com">Font Squirrel</a> and is embedded as a data uri. 
 </p>
-<p> Use <code>:not()</code> to avoid interfering with the code examples. 
+<p> We use <code>:not()</code> to avoid interfering with the code examples. 
 </p>
 <div class="styledocco-example"><a href="#">Unstyled link example</a></div><pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span>></span>Unstyled link example<span class="tag">&lt;/<span class="title">a</span>></span></code></pre>
 <p>Links inside example boxes don&#39;t get any of StyleDocco&#39;s style. 
@@ -340,7 +340,6 @@ code snippets.
     <span class="rule"><span class="attribute">font-weight</span>:<span class="value"> normal</span>;</span>
     <span class="rule"><span class="attribute">font-style</span>:<span class="value"> normal</span>;</span>
 <span class="rule">}</span></span>
-
 
 <span class="class">.styledocco-sidebar</span>,
 <span class="class">.styledocco-docs</span> > <span class="pseudo">:not(</span><span class="class">.styledocco-example</span>) <span class="rules">{
@@ -384,6 +383,7 @@ code snippets.
     <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">14</span>px</span>;</span>
 <span class="rule">}</span></span>
 <span class="class">.styledocco-code</span> <span class="tag">pre</span> <span class="tag">code</span>,
+<span class="class">.styledocco-docs</span> > <span class="tag">pre</span> <span class="tag">samp</span>,
 <span class="class">.styledocco-docs</span> > <span class="tag">pre</span> <span class="tag">code</span> <span class="rules">{
     <span class="rule"><span class="attribute">background</span>:<span class="value"> transparent</span>;</span>
     <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">0</span></span>;</span>
@@ -599,4 +599,4 @@ the same width as the sidebar. This is a hidden comment btw. */</span>
 <span class="class">.styledocco-code</span> <span class="class">.symbol</span>,
 <span class="class">.styledocco-docs</span> > <span class="tag">pre</span> <span class="class">.symbol</span> <span class="rules">{
     <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="number">#990073</span></span>;</span>
-<span class="rule">}</span></span></code></pre></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Mon Mar 12 2012 16:12:55 GMT+0100 (CET). -->
+<span class="rule">}</span></span></code></pre></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Mon Mar 12 2012 16:32:19 GMT+0100 (CET). -->
