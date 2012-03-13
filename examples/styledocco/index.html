@@ -1,13 +1,10 @@
 <!DOCTYPE html><html><head><title>StyleDocco</title><meta charset="utf-8"><link rel="stylesheet" href="./docs.css"></head><body><div class="styledocco-container"><div class="styledocco-sidebar"><a href="./index.html" class="styledocco-brand">StyleDocco</a><ul class="styledocco-nav"><li><a href="./resources/docs.html">docs
-</a></li></ul></div><div class="styledocco-main"><div class="styledocco-section"><div class="styledocco-docs"><div class="styledocco-example"> <strong><em>_</em></strong> <strong>         </strong>        <strong>_</strong>
-|     <strong>|  |_.--.--|  |-----.|     -----.----.----.-----.
-|</strong>     |   <em>|  |  |  |  -__||  --  | </em>  |  <strong>|  </strong>|  <em>  |
-|<strong>__</strong></em>|<strong><em>_|</em></strong>  |<strong>|<em>_</em></strong>||<strong>_</strong>/<strong>_</strong>|<strong><strong>|</strong></strong>|<strong>_</strong>|
-             |<strong>_</strong>|</div><pre><code> <span class="strong">_____</span><span class="strong">__ __</span>         <span class="strong">__        __</span><span class="emphasis">___</span>
-|     <span class="emphasis">__|  |_</span>.--.--|  |-----.|     \-----.----.----.-----.
-|<span class="strong">__     |   _|  |  |  |  -__</span>||  --  | <span class="emphasis">_  |  _</span><span class="emphasis">_|  _</span><span class="emphasis">_|  _</span>  |
-|<span class="strong">_____</span><span class="strong">__|__</span><span class="strong">__|__</span><span class="emphasis">_  |_</span><span class="emphasis">_|_</span><span class="strong">____||__</span><span class="strong">___/__</span><span class="strong">___|__</span><span class="strong">__|__</span><span class="strong">__|__</span><span class="emphasis">___</span>|
-<span class="code">             |_____|</span></code></pre>
+</a></li></ul></div><div class="styledocco-main"><div class="styledocco-section"><div class="styledocco-docs"><pre><samp> _______ __         __        _____
+|     __|  |_.--.--|  |-----.|     \-----.----.----.-----.
+|__     |   _|  |  |  |  -__||  --  | _  |  __|  __|  _  |
+|_______|____|___  |__|_____||_____/_____|____|____|_____|
+             |_____|</samp></pre>
+
 <p>StyleDocco generates documentation and style guide documents from your stylesheets.
 
 </p>
@@ -31,7 +28,7 @@
 <p><code>npm install -g styledocco</code>
 
 </p>
-<p>or check out this repository.
+<p>or clone the <a href="https://github.com/jacobrask/styledocco">GitHub repository</a>.
 
 </p>
 <p>StyleDocco is free software, released under the <a href="https://raw.github.com/jacobrask/styledocco/master/LICENSE">MIT license</a>.
@@ -46,32 +43,35 @@
 <ul>
 <li><code>--name</code>, <code>-n</code> Name of the project <em>(required)</em></li>
 <li><code>--out</code>, <code>-o</code>  Output directory <em>(default: &quot;docs&quot;)</em></li>
-<li><code>--tmpl</code>       Directory for custom <code>index.jade</code> and <code>docs.jade</code> templates <em>(optional)</em></li>
+<li><code>--tmpl</code>       Directory for custom <code>docs.jade</code> template <em>(optional)</em></li>
 <li><code>--overwrite</code>  Overwrite existing files (<code>docs.css</code>) in target directory.</li>
 </ul>
 <h2>Examples</h2>
-<div class="styledocco-example">/<em> Provides extra visual weight and identifies the primary action in a set of buttons
-<code>   
-&lt;button class=&quot;btn primary&quot;&gt;Primary&lt;/button&gt;  
-</code> </em>/
+<div class="styledocco-example">/*
+    <button class="btn primary">Primary</button>
+
+Provides extra visual weight and identifies the primary action in a set of buttons. */
 .btn.primary {
     background: blue;
     color: white;
-}</div><pre><code>/* Provides extra visual weight and identifies the primary action in a set of buttons
-```   
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn primary"</span>></span>Primary<span class="tag">&lt;/<span class="title">button</span>></span>  
-``` */
+}</div><pre><code>/*
+    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn primary"</span>></span>Primary<span class="tag">&lt;/<span class="title">button</span>></span>
+
+Provides extra visual weight and identifies the primary action in a set of buttons. */
 .btn.primary {
     background: blue;
     color: white;
 }</code></pre>
-<p>Would display the description, a button as well as the example HTML code. The CSS will be included in the <code>style</code> element of the document.
+<p>This page is an example itself, as it was generated from the StyleDocco readme file. The <a href="resources/docs.html">docs</a> file is the documentation of the default StyleDocco CSS file.
 
 </p>
-<p>See the <code>examples</code> folder for more in-depth examples.
+<p>An additional example was generated from a modified file of the <a href="examples/bootstrap/docs/less/buttons.html">Twitter Bootstrap</a> project.
 
 
 </p>
 <h2>Acknowledgements</h2>
 <p>A lot of the heavy lifting in StyleDocco is done by the excellent <a href="https://github.com/chjj/marked">Marked</a> module by Christopher Jeffrey. The original <a href="https://github.com/jashkenas/docco">Docco</a> by Jeremy Ashkenas and <a href="https://github.com/mbrevoort/docco-husky">Docco Husky</a> by Mike Brevoort were also of great help to this project.
-</p></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Mon Mar 12 2012 22:24:17 GMT+0100 (CET). -->
+
+</p>
+<p><a href="https://github.com/jacobrask/styledocco" id="styledocco-fork-me"><img style="position:fixed;top:0;right:0;border:0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+</p></div></div></div></div></body></html><!-- Generated with StyleDocco (https://github.com/jacobrask/styledocco) at Tue Mar 13 2012 23:18:35 GMT+0100 (CET). -->
