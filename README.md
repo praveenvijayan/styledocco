@@ -34,20 +34,22 @@ StyleDocco is free software, released under the [MIT license](https://raw.github
 
  * `--name`, `-n` Name of the project *(required)*
  * `--out`, `-o`  Output directory *(default: "docs")*
- * `--tmpl`       Directory for custom `docs.jade` template *(optional)*
+ * `--tmpl`       Directory for custom `docs.jade` and `docs.css` *(optional)*
  * `--overwrite`  Overwrite existing files (`docs.css`) in target directory.
 
 
 ## Examples
 
-    /*
-        <button class="btn primary">Primary</button>
+Provides extra visual weight and identifies the primary action in a set of buttons.
+    <button class="btn primary">Primary</button>
 
-    Provides extra visual weight and identifies the primary action in a set of buttons. */
-    .btn.primary {
-        background: blue;
-        color: white;
-    }
+<pre><code>/*
+    <button class="btn primary">Primary</button>
+Provides extra visual weight and identifies the primary action in a set of buttons. */
+.btn.primary {
+    background: blue;
+    color: white;
+}</code></pre>
 
 This page is an example itself, as it was generated from the StyleDocco readme file. The [docs](resources/docs.html) file is the documentation of the default StyleDocco CSS file.
 
@@ -56,6 +58,5 @@ An additional example was generated from a modified file of the [Twitter Bootstr
 
 ## Acknowledgements
 
-A lot of the heavy lifting in StyleDocco is done by the excellent [Marked](https://github.com/chjj/marked) module by Christopher Jeffrey. The original [Docco](https://github.com/jashkenas/docco) by Jeremy Ashkenas and [Docco Husky](https://github.com/mbrevoort/docco-husky) by Mike Brevoort were also of great help to this project.
-
+A lot of the heavy lifting in StyleDocco is done by the excellent [Marked](https://github.com/chjj/marked) module by Christopher Jeffrey. The original [Docco](https://github.com/jashkenas/docco) by Jeremy Ashkenas and [Docco Husky](https://github.com/mbrevoort/docco-husky) by Mike Brevoort were also of great help to this project. StyleDocco was also inspired by [Knyle Style Sheets](https://github.com/kneath/kss), a similar project written in Ruby.
 <a href="https://github.com/jacobrask/styledocco" id="styledocco-fork-me"><img style="position:fixed;top:0;right:0;border:0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
