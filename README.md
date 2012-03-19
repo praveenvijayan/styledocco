@@ -40,16 +40,25 @@ StyleDocco is free software, released under the [MIT license](https://raw.github
 
 ## Examples
 
-Provides extra visual weight and identifies the primary action in a set of buttons.
-    <button class="btn primary">Primary</button>
-
+### Stylesheet
 <pre><code>/*
-    <button class="btn primary">Primary</button>
+    &lt;button class="btn primary"&gt;Primary&lt;/button&gt;
 Provides extra visual weight and identifies the primary action in a set of buttons. */
 .btn.primary {
-    background: blue;
-    color: white;
+    background: steelblue;
+    color: snow;
+    border: 1px solid steelblue;
 }</code></pre>
+
+<!-- Special case for this readme example only --><style>
+.btn.primary { background: steelblue; color: snow; border: 2px outset steelblue; }</style>
+
+### Output
+
+Provides extra visual weight and identifies the primary action in a set of buttons.
+
+    <button class="btn primary">Primary</button>
+
 
 This page is an example itself, as it was generated from the StyleDocco readme file. The [docs](resources/docs.html) file is the documentation of the default StyleDocco CSS file.
 

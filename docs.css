@@ -25,9 +25,10 @@ displaying code blocks. It was converted to WOFF with
 /* We use `:not()` to avoid interfering with the code examples. */
 .styledocco-sidebar,
 .styledocco-docs > :not(.styledocco-example) {
+    margin: 15px 20px;
     color: #333;
     font-family: sans-serif;
-    margin: 15px 20px;
+    -webkit-font-smoothing: subpixel-antialiased;
 }
 .styledocco-docs > p, .styledocco-docs > ul, .styledocco-docs > ol {
     font-size: 12px;
