@@ -17,9 +17,9 @@ Suggestions, feature requests and bug reports are very welcome, either at [GitHu
 
 ## Installation
 
-StyleDocco requires [Node.js](http://nodejs.org).
+StyleDocco requires [Node.js](http://nodejs.org). When you have Node.js installed, run
 
-`npm install -g styledocco`
+    npm install -g styledocco
 
 or clone the [GitHub repository](https://github.com/jacobrask/styledocco).
 
