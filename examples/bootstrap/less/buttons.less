@@ -38,7 +38,7 @@
 
 // ### States
 //
-//    <button class="btn :hover">Default</button>
+//    <button class="btn :hover">Hovered</button>
 .btn:hover {
   color: @grayDark;
   text-decoration: none;
@@ -52,7 +52,7 @@
 
 // Focus state for keyboard and accessibility
 //
-//    <button class="btn :focus">Default</button>
+//    <button class="btn :focus">Focussed</button>
 .btn:focus {
   .tab-focus();
 }
@@ -67,9 +67,9 @@
   background-color: darken(@white, 15%) e("\9");
   outline: 0;
 }
-
-//    <button class="btn" disabled>Disabled</button>  
 // Add the `disabled` class to links and the `disabled` attribute for `button` elements.
+//
+//    <button class="btn" disabled>Disabled</button>  
 .btn.disabled,
 .btn[disabled] {
   cursor: default;
@@ -172,6 +172,7 @@
 .btn-danger {
   .buttonBackground(#ee5f5b, #bd362f);
 }
+
 // Indicates a successful or positive action
 //
 //    <button class="btn btn-success">Success</button>  
@@ -181,6 +182,7 @@
 .btn-success {
   .buttonBackground(#62c462, #51a351);
 }
+
 // Used as an alternate to the default styles
 //
 //    <button class="btn btn-info">Info</button>  
@@ -190,6 +192,7 @@
 .btn-info {
   .buttonBackground(#5bc0de, #2f96b4);
 }
+
 // Alternate dark gray button, not tied to a semantic action or use
 //
 //    <button class="btn btn-inverse">Inverse</button>  

@@ -40,15 +40,16 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
 </p>
 <div class="styledocco-example"><button class="btn">Default</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn"</span>></span>Default<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
 <h3>States</h3>
-<div class="styledocco-example"><button class="btn :hover">Default</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn :hover"</span>></span>Default<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
+<div class="styledocco-example"><button class="btn :hover">Hovered</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn :hover"</span>></span>Hovered<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
 <p> Focus state for keyboard and accessibility
 
 </p>
-<div class="styledocco-example"><button class="btn :focus">Default</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn :focus"</span>></span>Default<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
+<div class="styledocco-example"><button class="btn :focus">Focussed</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn :focus"</span>></span>Focussed<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
 <div class="styledocco-example"><button class="btn active">Active</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn active"</span>></span>Active<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
-<div class="styledocco-example"><button class="btn" disabled>Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn"</span> <span class="attribute">disabled</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
 <p> Add the <code>disabled</code> class to links and the <code>disabled</code> attribute for <code>button</code> elements.
-</p></div><div class="styledocco-code"><pre><code>.btn {
+
+</p>
+<div class="styledocco-example"><button class="btn" disabled>Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn"</span> <span class="attribute">disabled</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre></div><div class="styledocco-code"><pre><code>.btn {
   display: inline-block;
   padding: 4px 10px 4px;
   margin-bottom: 0; // For input.btn
@@ -95,7 +96,6 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
   background-color: darken(@white, 15%) e("\9");
   outline: 0;
 }
-
 .btn.disabled,
 .btn[disabled] {
   cursor: default;
@@ -229,12 +229,15 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
 .btn-danger {
   .buttonBackground(#ee5f5b, #bd362f);
 }
+
 .btn-success {
   .buttonBackground(#62c462, #51a351);
 }
+
 .btn-info {
   .buttonBackground(#5bc0de, #2f96b4);
 }
+
 .btn-inverse {
   .buttonBackground(#454545, #262626);
 }
@@ -262,4 +265,4 @@ input[type="submit"].btn {
     *padding-top: 3px;
     *padding-bottom: 3px;
   }
-}</code></pre></div></div></div></div><script src="../docs.js"></script></body></html><!-- Generated with StyleDocco (http://jacobrask.github.com/styledocco) at Thu Mar 29 2012 22:27:30 GMT+0200 (CEST). -->
+}</code></pre></div></div></div></div><script src="../docs.js"></script></body></html><!-- Generated with StyleDocco (http://jacobrask.github.com/styledocco) at Thu Mar 29 2012 22:37:27 GMT+0200 (CEST). -->
