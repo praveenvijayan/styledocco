@@ -1,8 +1,10 @@
-<pre><samp> _______ __         __        _____
+```
+ _______ __         __        _____
 |     __|  |_.--.--|  |-----.|     \-----.----.----.-----.
 |__     |   _|  |  |  |  -__||  --  | _  |  __|  __|  _  |
 |_______|____|___  |__|_____||_____/_____|____|____|_____|
-             |_____|</samp></pre>
+             |_____|
+```
 
 StyleDocco generates documentation and style guide documents from your stylesheets.
 
@@ -17,9 +19,9 @@ Suggestions, feature requests and bug reports are very welcome, either at [GitHu
 
 ## Installation
 
-StyleDocco requires [Node.js](http://nodejs.org). When you have Node.js installed, run
+StyleDocco requires [Node.js](http://nodejs.org). After installing Node.js, run
 
-<pre><kbd>npm install -g styledocco</kbd></pre>
+    npm install -g styledocco
 
 or clone the [GitHub repository](https://github.com/jacobrask/styledocco).
 
@@ -36,11 +38,10 @@ If your project includes a `README` file, it will be used as the base for an `in
 
 ### Options
 
- * `--name`, `-n`   Name of the project *(required)*
- * `--out`, `-o`    Output directory *(default: "docs")*
- * `--tmpl`         Directory for custom `docs.jade` template and `docs.css` *(optional)*
- * `--overwrite`    Overwrite existing files (`docs.css`) in target directory. *(default: false)*
- * `--preprocessor` Custom preprocessor command. *(optional)* (ex: `--preprocessor "scss --load-path=deps/"`)
+ * `--name`, `-n`      Name of the project *(required)*
+ * `--out`, `-o`       Output directory *(default: "docs")*
+ * `--resources`, `-s` Directory for custom template, CSS and JavaScript. Can be the same as the output directory if you don't want to overwrite your changes. StyleDocco defaults will be used for any required file not found in this directory. *(optional)*
+ * `--preprocessor`    Custom preprocessor command. *(optional)* (ex: `--preprocessor "scss --load-path=deps/"`)
 
 ### Usage examples
 
@@ -50,29 +51,30 @@ Generate documentation for *My Project* in the `docs` folder, from the files in 
 
 Generate documentation for *My Project* in the `mydocs` folder, from source files in the `styles` folder. Use the Less binary in `~/bin/lessc`.
 
-`styledocco -n "My Project" -o mydocs --preprocessor "~/bin/lessc" styles`
+`styledocco -n "My Project" -o mydocs -s mydocs --preprocessor "~/bin/lessc" styles`
 
 
 ## Syntax examples
 
-### Stylesheet
-<pre><code>/*
-    &lt;button class="btn primary"&gt;Primary&lt;/button&gt;
-Provides extra visual weight and identifies the primary action in a set of buttons. */
-.btn.primary {
-    background: steelblue;
-    color: snow;
-    border: 1px solid steelblue;
-}</code></pre>
+### STylesheet
 
-<!-- Special case for this readme example only --><style>
-.btn.primary { background: steelblue; color: snow; border: 2px outset steelblue; }</style>
+    /* Provides extra visual weight and identifies the primary action in a set of buttons.
+    
+        <button class="btn primary">Primary</button> */
+    .btn.primary {
+        background: steelblue;
+        color: snow;
+        border: 1px solid steelblue;
+    }
 
 ### Output
 
 Provides extra visual weight and identifies the primary action in a set of buttons.
 
-    <button class="btn primary">Primary</button>
+<div class="styledocco-example">
+<button class="btn primary" style="background:steelblue;color:snow,border:2px outset steelblue">Primary</button>
+</div>
+<pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn primary"</span>></span>Primary<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
 
 
 This page is an example itself, as it was generated from the StyleDocco readme file. The [docs](resources/docs.html) file is the documentation of the default StyleDocco CSS file.
@@ -82,5 +84,5 @@ An additional example was generated from a modified file of the [Twitter Bootstr
 
 ## Acknowledgements
 
-A lot of the heavy lifting in StyleDocco is done by the excellent [Marked](https://github.com/chjj/marked) module by Christopher Jeffrey. The original [Docco](https://github.com/jashkenas/docco) by Jeremy Ashkenas and [Docco Husky](https://github.com/mbrevoort/docco-husky) by Mike Brevoort were also of great help to this project. [Knyle Style Sheets](https://github.com/kneath/kss) is a similar project written in Ruby, and has also been an inspiration to StyleDocco.
+A lot of the heavy lifting in StyleDocco is done by the excellent [Marked](https://github.com/chjj/marked) module by Christopher Jeffrey. The original [Docco](https://github.com/jashkenas/docco) by Jeremy Ashkenas and [Docco Husky](https://github.com/mbrevoort/docco-husky) by Mike Brevoort were also of great help to this project. [Knyle Style Sheets](https://github.com/kneath/kss), a similar project written in Ruby, has also been an inspiration to StyleDocco.
 <a href="https://github.com/jacobrask/styledocco" id="styledocco-fork-me"><img style="position:fixed;top:0;right:0;border:0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>

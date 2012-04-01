@@ -29,7 +29,7 @@
 button.btn,input[type="submit"].btn{*padding-top:2px;*padding-bottom:2px;}button.btn::-moz-focus-inner,input[type="submit"].btn::-moz-focus-inner{padding:0;border:0;}
 button.btn.large,input[type="submit"].btn.large{*padding-top:7px;*padding-bottom:7px;}
 button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom:3px;}
-</style><link rel="stylesheet" href="../docs.css"></head><body><div class="styledocco-container"><div class="styledocco-sidebar"><a href="../index.html" class="styledocco-brand">Twitter Bootstrap</a><ul class="styledocco-nav"><li><a href="../less/buttons.html">buttons
+</style><link rel="stylesheet" href="../docs.css"></head><body><div class="styledocco-container"><div class="styledocco-sidebar"><a href="../index.html" class="styledocco-brand">Twitter Bootstrap</a><strong class="styledocco-nav-heading">true</strong><ul class="styledocco-nav"><li><a href="../less/buttons.html">buttons
 </a></li></ul></div><div class="styledocco-main"><div class="styledocco-section"><div class="styledocco-docs"><h1> Button Styles</h1>
 <p> As a convention, buttons should only be used for actions while hyperlinks are to be used for objects. For instance, &quot;Download&quot; should be a button while &quot;recent activity&quot; should be a link.
  Button styles can be applied to anything with the <code>btn</code> class applied. However, typically you&#39;ll want to apply these to only <code>a</code> and <code>button</code> elements.
@@ -39,17 +39,10 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
 
 </p>
 <div class="styledocco-example"><button class="btn">Default</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn"</span>></span>Default<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
-<h3>States</h3>
-<div class="styledocco-example"><button class="btn :hover">Hovered</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn :hover"</span>></span>Hovered<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
-<p> Focus state for keyboard and accessibility
-
-</p>
-<div class="styledocco-example"><button class="btn :focus">Focussed</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn :focus"</span>></span>Focussed<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
 <div class="styledocco-example"><button class="btn active">Active</button></div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn active"</span>></span>Active<span class="tag">&lt;/<span class="title">button</span>></span></code></pre>
+<div class="styledocco-example"><button class="btn" disabled>Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn"</span> <span class="attribute">disabled</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
 <p> Add the <code>disabled</code> class to links and the <code>disabled</code> attribute for <code>button</code> elements.
-
-</p>
-<div class="styledocco-example"><button class="btn" disabled>Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn"</span> <span class="attribute">disabled</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre></div><div class="styledocco-code"><pre><code>.btn {
+</p></div><div class="styledocco-code"><pre><code>.btn {
   display: inline-block;
   padding: 4px 10px 4px;
   margin-bottom: 0; // For input.btn
@@ -72,6 +65,7 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
   .ie7-restore-left-whitespace();
 }
 
+ // **Hover state**
 .btn:hover {
   color: @grayDark;
   text-decoration: none;
@@ -83,6 +77,7 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
   .transition(background-position .1s linear);
 }
 
+ // Focus state for keyboard and accessibility
 .btn:focus {
   .tab-focus();
 }
@@ -96,6 +91,7 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
   background-color: darken(@white, 15%) e("\9");
   outline: 0;
 }
+
 .btn.disabled,
 .btn[disabled] {
   cursor: default;
@@ -132,66 +128,24 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
   <span class="rule"><span class="attribute">font-size</span>:<span class="value"> @baseFontSize - <span class="number">2</span>px</span>;</span>
   <span class="rule"><span class="attribute">line-height</span>:<span class="value"> @baseLineHeight - <span class="number">4</span>px</span>;</span>
 <span class="rule">}</span></span></code></pre></div></div><div class="styledocco-section"><div class="styledocco-docs"><h2> Alternate button styles</h2>
+<div class="styledocco-example"><button class="btn btn-primary">Primary</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-primary"</span>></span>Primary<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
 <p> Provides extra visual weight and identifies the primary action in a set of buttons.
-
 </p>
-<div class="styledocco-example"><button class="btn btn-primary">Primary</button>  
-<button class="btn btn-primary active">Active</button>  
-<button class="btn btn-primary :hover">Hovered</button>  
-<button class="btn btn-primary disabled">Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-primary"</span>></span>Primary<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-primary active"</span>></span>Active<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-primary :hover"</span>></span>Hovered<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-primary disabled"</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
-<p> Indicates caution should be taken with this action.
-
+<div class="styledocco-example"><button class="btn btn-warning">Warning</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-warning"</span>></span>Warning<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
+<p> Indicates caution should be taken with this action
 </p>
-<div class="styledocco-example"><button class="btn btn-warning">Warning</button>  
-<button class="btn btn-warning active">Active</button>  
-<button class="btn btn-warning :hover">Hovered</button>  
-<button class="btn btn-warning disabled">Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-warning"</span>></span>Warning<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-warning active"</span>></span>Active<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-warning :hover"</span>></span>Hovered<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-warning disabled"</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
+<div class="styledocco-example"><button class="btn btn-danger">Danger</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-danger"</span>></span>Danger<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
 <p> Indicates a dangerous or potentially negative action
-
 </p>
-<div class="styledocco-example"><button class="btn btn-danger">Danger</button>  
-<button class="btn btn-danger active">Active</button>  
-<button class="btn btn-danger :hover">Hovered</button>  
-<button class="btn btn-danger disabled">Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-danger"</span>></span>Danger<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-danger active"</span>></span>Active<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-danger :hover"</span>></span>Hovered<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-danger disabled"</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
+<div class="styledocco-example"><button class="btn btn-success">Success</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-success"</span>></span>Success<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
 <p> Indicates a successful or positive action
-
 </p>
-<div class="styledocco-example"><button class="btn btn-success">Success</button>  
-<button class="btn btn-success active">Active</button>  
-<button class="btn btn-success :hover">Hovered</button>  
-<button class="btn btn-success disabled">Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-success"</span>></span>Success<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-success active"</span>></span>Active<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-success :hover"</span>></span>Hovered<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-success disabled"</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
+<div class="styledocco-example"><button class="btn btn-info">Info</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-info"</span>></span>Info<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
 <p> Used as an alternate to the default styles
-
 </p>
-<div class="styledocco-example"><button class="btn btn-info">Info</button>  
-<button class="btn btn-info active">Active</button>  
-<button class="btn btn-info :hover">Hovered</button>  
-<button class="btn btn-info disabled">Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-info"</span>></span>Info<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-info active"</span>></span>Active<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-info :hover"</span>></span>Hovered<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-info disabled"</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
+<div class="styledocco-example"><button class="btn btn-inverse">Inverse</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-inverse"</span>></span>Inverse<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre>
 <p> Alternate dark gray button, not tied to a semantic action or use
-
-</p>
-<div class="styledocco-example"><button class="btn btn-inverse">Inverse</button>  
-<button class="btn btn-inverse active">Active</button>  
-<button class="btn btn-inverse :hover">Hovered</button>  
-<button class="btn btn-inverse disabled">Disabled</button>  </div><pre><code><span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-inverse"</span>></span>Inverse<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-inverse active"</span>></span>Active<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-inverse :hover"</span>></span>Hovered<span class="tag">&lt;/<span class="title">button</span>></span>  
-<span class="tag">&lt;<span class="title">button</span> <span class="attribute">class</span>=<span class="value">"btn btn-inverse disabled"</span>></span>Disabled<span class="tag">&lt;/<span class="title">button</span>></span>  </code></pre></div><div class="styledocco-code"><pre><code> // Set text color
+</p></div><div class="styledocco-code"><pre><code> // Set text color
 .btn-primary,
 .btn-primary:hover,
 .btn-warning,
@@ -221,23 +175,18 @@ button.btn.small,input[type="submit"].btn.small{*padding-top:3px;*padding-bottom
 .btn-primary {
   .buttonBackground(@primaryButtonBackground, spin(@primaryButtonBackground, 20));
 }
-
 .btn-warning {
   .buttonBackground(lighten(@orange, 15%), @orange);
 }
-
 .btn-danger {
   .buttonBackground(#ee5f5b, #bd362f);
 }
-
 .btn-success {
   .buttonBackground(#62c462, #51a351);
 }
-
 .btn-info {
   .buttonBackground(#5bc0de, #2f96b4);
 }
-
 .btn-inverse {
   .buttonBackground(#454545, #262626);
 }
@@ -265,4 +214,4 @@ input[type="submit"].btn {
     *padding-top: 3px;
     *padding-bottom: 3px;
   }
-}</code></pre></div></div></div></div><script src="../docs.js"></script></body></html><!-- Generated with StyleDocco (http://jacobrask.github.com/styledocco) at Thu Mar 29 2012 22:37:27 GMT+0200 (CEST). -->
+}</code></pre></div></div></div></div></body></html><!-- Generated with StyleDocco (http://jacobrask.github.com/styledocco) at Sat Mar 24 2012 19:39:17 GMT+0100 (CET). -->
