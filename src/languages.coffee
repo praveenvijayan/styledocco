@@ -12,18 +12,21 @@ class Language
     # We match only comments without any code on the same line.
     @regexs.single = new RegExp('^' + @symbols.single) if @symbols.single
     # Build regex's by splitting string and then joining with escape chars.
-    @regexs.multi_start = new RegExp '^\\' + @symbols.multi[0].split('').join('\\')
-    @regexs.multi_end = new RegExp '\\' + @symbols.multi[1].split('').join('\\')
+    @regexs.multiStart = new RegExp '^\\' + @symbols.multi[0].split('').join('\\')
+    @regexs.multiEnd = new RegExp '\\' + @symbols.multi[1].split('').join('\\')
 
   # Check type of string.
   checkType: (str) ->
-    if str.match(@regexs.multi_start) and str.match(@regexs.multi_end) \
-    or @regexs.single? and str.match @regexs.single
+    # Check for multi-line comment symbols first to avoid matching single-line
+    # comment symbols in multi-line blocks.
+    if str.match(@regexs.multiStart) and str.match(@regexs.multiEnd)
       'single'
-    else if str.match @regexs.multi_start
+    else if str.match @regexs.multiStart
       'multistart'
-    else if str.match @regexs.multi_end
+    else if str.match @regexs.multiEnd
       'multiend'
+    else if @regexs.single? and str.match @regexs.single
+      'single'
     else
       'code'
 
@@ -36,6 +39,10 @@ class Language
   # Compile to CSS.
   compile: (filename, customPreprocessor, cb) ->
     if @preprocessor? or customPreprocessor
+      # Do not attempt to compile partial files
+      if 'nocompile' of @preprocessor and !!filename.match @preprocessor.nocompile
+          cb null, ''
+          return
       if customPreprocessor?
         preCmd = "#{customPreprocessor} #{filename}"
       else
@@ -52,9 +59,9 @@ class Language
 languages =
   '.css':  new Language({ multi: [ "/*", "*/" ] })
   '.scss': new Language({ single: '//', multi: [ "/*", "*/" ] },
-                        { cmd: 'scss', args: [ '-t', 'compressed' ] })
+                        { cmd: 'scss', args: [ '-t', 'compressed' ], nocompile: /(?:\/|^)_/ })
   '.sass': new Language({ single: '//', multi: [ "/*", "*/" ] },
-                        { cmd: 'sass', args: [ '-t', 'compressed' ] })
+                        { cmd: 'sass', args: [ '-t', 'compressed' ], nocompile: /(?:\/|^)_/ })
   '.less': new Language({ single: '//', multi: [ "/*", "*/" ] },
                         { cmd: 'lessc', args: [ '-x' ] })
   '.styl': new Language({ single: '//', multi: [ "/*", "*/" ] },
@@ -62,7 +69,7 @@ languages =
 
 
 # Public functions
-# ------------------
+# ----------------
 
 # Determine whether a file is of a supported file type.
 exports.isSupported = (filename) -> path.extname(filename) of languages
