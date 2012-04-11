@@ -18,6 +18,7 @@ options = optimist
   .describe('resources', 'Directory for static resources').alias('s', 'resources')
     .default('resources', path.resolve(__dirname, '../resources'))
   .describe('preprocessor', 'Custom preprocessor command')
+  .describe('include', 'CSS to include on all pages')
   .argv
 options.in = options._[0] or './'
 
@@ -54,10 +55,10 @@ generateFile = (source, data) ->
   }
   render = (data) ->
     template = fs.readFileSync templateFile, 'utf-8'
-    html = jade.compile(template, filename: templateFile)(data)
+    html = jade.compile(template, filename: templateFile, pretty: on)(data)
     console.log "styledocco: #{source} -> #{path.join options.out, dest}"
     writeFile dest, html
-  if langs.isSupported source
+  if langs.isSupported(source) and options.preprocessor isnt 'none'
     # Run source through suitable CSS preprocessor.
     lang = langs.getLanguage source
     lang.compile source, options.preprocessor, (err, css) ->
@@ -86,18 +87,7 @@ files = sources.
     return true
   ).sort()
 
-# Make `link` objects for the menu.
-menu = {}
-for file in files
-  link =
-    name: path.basename(file, path.extname file)
-    href: 'html/' + _.makeDestination file
-  parts = file.split('/').splice(1)
-  key = if parts.length > 1 then parts[0] else './'
-  if menu[key]?
-    menu[key].push link
-  else
-    menu[key] = [ link ]
+menu = _.makeMenu files
 
 # Look for a README file and generate an index.html.
 readme = _.findFile(options.in, /^readme/i) \
@@ -105,7 +95,12 @@ readme = _.findFile(options.in, /^readme/i) \
       or _.findFile(options.resources, /^readme/i) \
       or path.resolve(__dirname, '../resources/README.md')
 
-sections = [ docs: marked fs.readFileSync(readme, 'utf-8') ]
+readmeText =
+  if path.extname(readme) is '.md'
+    marked fs.readFileSync(readme, 'utf-8')
+  else
+    fs.readFileSync(readme, 'utf-8')
+sections = [ docs: readmeText ]
 generateFile readme, { menu, sections, title: '', description: '' }
 
 # Generate documentation files.
@@ -121,3 +116,10 @@ writeStaticFile = (fileName) ->
 
 writeStaticFile 'docs.css'
 writeStaticFile 'docs.js'
+
+# Prepend custom CSS specified with `--include` to docs.css
+if options.include?
+  customCss = fs.readFileSync path.join(options.include), 'utf8'
+  fd = fs.openSync path.join(options.out, 'docs.css'), 'w', 666
+  fs.writeSync fd, customCss, 0
+  fs.close fd
