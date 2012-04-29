@@ -9,11 +9,17 @@ html
     if css
       style !{css}
     link(rel='stylesheet', href="#{project.root}docs.css")
-  body
+    link(rel='stylesheet', href="#{project.root}flipStyleGuide.css")
+  if project.index
+      bodyClass = 'styledocco-index';
+    else
+      bodyClass = 'styledocco-single';
+  body(class="#{bodyClass}")
     .styledocco-container
       .styledocco-sidebar
-        a.styledocco-brand(href="#{project.root}index.html") #{project.name}
-        each links, folder in project.menu
+       .styledocco-inner-sidebar
+         a.styledocco-brand(href="#{project.root}index.html") #{project.name}
+         each links, folder in project.menu
           unless folder == './'
             strong.styledocco-nav-heading #{folder}
           ul.styledocco-nav
@@ -21,9 +27,13 @@ html
               li
                 a(href="#{project.root}#{link.href}")
                   #{link.name}
+      .styledocco-modules
+          each section, i in sections
+             a.styledocco-module-link(href="#section-#{i + 1}") #{section.title}
       .styledocco-main
         each section, i in sections
           .styledocco-section(id="section-#{i + 1}")
+           .styledocco-outer-docs
             .styledocco-docs
               a(class='pilcrow', href="#section-#{i + 1}") &#182;
               !{section.docs}
@@ -32,4 +42,13 @@ html
                 pre
                   code !{section.code}
     script(src='#{project.root}docs.js')
+    script(src='#{project.root}jquery.min.js')
+    script(src='#{project.root}turn.min.js')
+    script$(function(){
+            $('.styledocco-single .styledocco-main').turn({width:980,height:650,display:'single'});
+            $('.styledocco-module-link').on('click', function(){ 
+               var num=this.hash.split('-')[1]
+               $('.styledocco-single .styledocco-main').turn('page', parseInt(num)); 
+               return false;
+            })})
 <!-- Generated with StyleDocco (http://jacobrask.github.com/styledocco). -->
