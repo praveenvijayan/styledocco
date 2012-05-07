@@ -5,16 +5,13 @@
     "styleguide",
     "css",
     "documentation" ],
-  "author": "Jacob Rask <jacob@jacobrask.net>",
-  "version": "0.3.5",
-  "homepage": "http://jacobrask.github.com/styledocco/",
+  "author": "Praveen vijayan <praveenv.vijayan@gmail.com>",
+  "version": "0.1.5",
+  "homepage": "https://github.com/praveenvijayan/styledocco",
   "licenses": [
     { "type": "MIT",
-      "url": "http://github.com/jacobrask/styledocco/raw/master/LICENSE" } ],
-  "contributors": [
-    "Jacob Rask <jacob@jacobrask.net>",
-    "Mike Brevoort <mike@brevoort.com>",
-    "Jeremy Ashkenas" ],
+      "url": "https://raw.github.com/praveenvijayan/styledocco/master/LICENSE" } ],
+  "contributors": [],
   "engines": { "node": ">=0.4.0" },
   "bugs": { "url": "https://github.com/praveenvijayan/styledocco/issues" },
   "repository": {
