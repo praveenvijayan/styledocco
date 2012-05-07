@@ -1,6 +1,6 @@
 {
   "name": "styledocs",
-  "description": "Generate style guides and documentation from your stylesheets.",
+  "description": "Generate style guide from your stylesheet.",
   "keywords": [
     "styleguide",
     "css",
