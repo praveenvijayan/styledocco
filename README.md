@@ -21,7 +21,8 @@ Styledocs is a style document generator. It parse through stylesheet and creates
  * `--include`         Prepend specified CSS file to the documentation stylesheet. *(optional)* (ex: `--include mysite.css`)
  
  ### Example
- 
+
+````css
 /*#breadcrumb 
 	<div class="breadcrumb"><a href="">Home</a><span>Email</span></div>
 */
@@ -29,8 +30,4 @@ Styledocs is a style document generator. It parse through stylesheet and creates
 .breadcrumb a{}
 .breadcrumb a:hover{}
 .breadcrumb span{}
-
-
- 
- 
- 
+```
